@@ -1,0 +1,43 @@
+<form action="" method="get">
+
+    <input type="text" name="id_empleado" id="id_empleado">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+
+{% if empleados %}
+    
+
+    
+
+{% for empleado in empleados %}
+
+    <h3>Empleado con ID {{empleado.id_empleado}}:</h3>
+    <div>
+        <ul>
+            <li>
+                Nombre:{{empleado.nombre}}
+            </li>
+            <li>
+                Apellido:{{empleado.apellido}}
+            </li>
+            <li>
+                Email:{{empleado.email}}
+            </li>
+            <li>
+                Sueldo:{{empleado.sueldo}}
+            </li>
+            <li>
+                Puesto:{{empleado.puesto}}
+            </li>
+        </ul>
+    </div>
+
+    
+{% endfor %}
+    
+{% else %}
+    <p>No hay datos para el ID ingresado</p>
+{% endif %}
